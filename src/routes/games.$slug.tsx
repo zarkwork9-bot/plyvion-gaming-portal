@@ -27,7 +27,7 @@ function GamePage() {
   const related = games.filter((g) => g.slug !== game.slug && g.categories.some((c) => game.categories.includes(c))).slice(0, 10);
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
-      <div className={`mx-auto w-full overflow-hidden rounded-xl border border-border bg-muted ${game.slug === "number-merge" ? "h-[720px] max-w-2xl" : "aspect-video"}`}>
+      <div className="mx-auto h-[720px] w-full max-w-2xl overflow-hidden rounded-xl border border-border bg-muted">
         <iframe src={game.embedUrl} title={game.title} className="h-full w-full" allow="fullscreen; autoplay; gamepad" allowFullScreen />
       </div>
       <h1 className="font-display mt-6 text-3xl font-bold">{game.title}</h1>
