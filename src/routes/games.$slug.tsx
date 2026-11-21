@@ -12,7 +12,7 @@ export const Route = createFileRoute("/games/$slug")({
   head: ({ loaderData }) =>
     loaderData
       ? { meta: [...seo(`${loaderData.game.title} — Play Free on Plyvion`, loaderData.game.description), ...(loaderData.game.thumbnail.startsWith("https://") ? [{ property: "og:image", content: loaderData.game.thumbnail }, { name: "twitter:image", content: loaderData.game.thumbnail }] : [])] }
-      : { meta: [{ title: "Game not found — Plyvion" }, { name: "robots", content: "noindex" }] },
+      : { meta: [...seo("Game not found — Plyvion", "The requested game is unavailable on Plyvion."), { name: "robots", content: "noindex" }] },
   notFoundComponent: () => (
     <div className="mx-auto max-w-xl px-4 py-24 text-center">
       <h1 className="font-display text-3xl font-bold">Game not found</h1>

@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Portal architecture
+- Keep manual game registrations in `src/lib/games.json`, validated and normalized by `src/lib/catalog.ts`; a single source drives homepage, categories, search and game URLs without persistence services.
+- Serve user-supplied local HTML5 folders from `public/` and normalize their catalog folder paths to an index.html entry; preserve explicit entry files and legacy HTTPS embed URLs.
+- Keep global navigation in the root Header with accessible Radix dialogs and CSS-token light/dark themes; browsing pages share the thumbnail grid without a marketing shell or footer.

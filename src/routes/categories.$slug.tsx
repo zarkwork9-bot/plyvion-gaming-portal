@@ -12,7 +12,7 @@ export const Route = createFileRoute("/categories/$slug")({
   head: ({ loaderData }) =>
     loaderData
       ? { meta: seo(`${loaderData.category.name} Games — Plyvion`, `Play free ${loaderData.category.name.toLowerCase()} games online on Plyvion. ${loaderData.category.description}`) }
-      : { meta: [{ title: "Category not found — Plyvion" }, { name: "robots", content: "noindex" }] },
+      : { meta: [...seo("Category not found — Plyvion", "The requested category is unavailable on Plyvion."), { name: "robots", content: "noindex" }] },
   notFoundComponent: () => (
     <div className="mx-auto max-w-xl px-4 py-24 text-center">
       <h1 className="font-display text-3xl font-bold">Category not found</h1>

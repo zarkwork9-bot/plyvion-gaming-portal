@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Header, Footer } from "../components/site/Header";
+import { Header } from "../components/site/Header";
 
 function NotFoundComponent() {
   return (
@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
@@ -125,7 +125,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <div className="flex min-h-screen flex-col"><Header /><main className="flex-1"><Outlet /></main><Footer /></div>
+      <div className="flex min-h-screen flex-col"><Header /><main className="flex-1"><Outlet /></main></div>
     </QueryClientProvider>
   );
 }

@@ -11,7 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as NewGamesRouteImport } from './routes/new-games'
+import { Route as PopularGamesRouteImport } from './routes/popular-games'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as CategoriesIndexRouteImport } from './routes/categories.index'
 import { Route as CategoriesSlugRouteImport } from './routes/categories.$slug'
 import { Route as GamesIndexRouteImport } from './routes/games.index'
@@ -27,9 +33,39 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewGamesRoute = NewGamesRouteImport.update({
+  id: '/new-games',
+  path: '/new-games',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PopularGamesRoute = PopularGamesRouteImport.update({
+  id: '/popular-games',
+  path: '/popular-games',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategoriesIndexRoute = CategoriesIndexRouteImport.update({
@@ -56,7 +92,13 @@ const GamesSlugRoute = GamesSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/new-games': typeof NewGamesRoute
+  '/popular-games': typeof PopularGamesRoute
   '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
+  '/terms': typeof TermsRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/games/$slug': typeof GamesSlugRoute
   '/categories/': typeof CategoriesIndexRoute
@@ -65,7 +107,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/new-games': typeof NewGamesRoute
+  '/popular-games': typeof PopularGamesRoute
   '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
+  '/terms': typeof TermsRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/games/$slug': typeof GamesSlugRoute
   '/categories': typeof CategoriesIndexRoute
@@ -75,7 +123,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/new-games': typeof NewGamesRoute
+  '/popular-games': typeof PopularGamesRoute
   '/privacy': typeof PrivacyRoute
+  '/search': typeof SearchRoute
+  '/terms': typeof TermsRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/games/$slug': typeof GamesSlugRoute
   '/categories/': typeof CategoriesIndexRoute
@@ -86,7 +140,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/contact'
+    | '/disclaimer'
+    | '/new-games'
+    | '/popular-games'
     | '/privacy'
+    | '/search'
+    | '/terms'
     | '/categories/$slug'
     | '/games/$slug'
     | '/categories/'
@@ -95,7 +155,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/contact'
+    | '/disclaimer'
+    | '/new-games'
+    | '/popular-games'
     | '/privacy'
+    | '/search'
+    | '/terms'
     | '/categories/$slug'
     | '/games/$slug'
     | '/categories'
@@ -104,7 +170,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/contact'
+    | '/disclaimer'
+    | '/new-games'
+    | '/popular-games'
     | '/privacy'
+    | '/search'
+    | '/terms'
     | '/categories/$slug'
     | '/games/$slug'
     | '/categories/'
@@ -114,7 +186,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  NewGamesRoute: typeof NewGamesRoute
+  PopularGamesRoute: typeof PopularGamesRoute
   PrivacyRoute: typeof PrivacyRoute
+  SearchRoute: typeof SearchRoute
+  TermsRoute: typeof TermsRoute
   CategoriesSlugRoute: typeof CategoriesSlugRoute
   GamesSlugRoute: typeof GamesSlugRoute
   CategoriesIndexRoute: typeof CategoriesIndexRoute
@@ -137,11 +215,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-games': {
+      id: '/new-games'
+      path: '/new-games'
+      fullPath: '/new-games'
+      preLoaderRoute: typeof NewGamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/popular-games': {
+      id: '/popular-games'
+      path: '/popular-games'
+      fullPath: '/popular-games'
+      preLoaderRoute: typeof PopularGamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/categories/': {
@@ -178,7 +298,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  NewGamesRoute: NewGamesRoute,
+  PopularGamesRoute: PopularGamesRoute,
   PrivacyRoute: PrivacyRoute,
+  SearchRoute: SearchRoute,
+  TermsRoute: TermsRoute,
   CategoriesSlugRoute: CategoriesSlugRoute,
   GamesSlugRoute: GamesSlugRoute,
   CategoriesIndexRoute: CategoriesIndexRoute,
