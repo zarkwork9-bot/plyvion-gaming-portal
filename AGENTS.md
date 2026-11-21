@@ -33,3 +33,8 @@ use the editor.
 - Keep manual game registrations in `src/lib/games.json`, validated and normalized by `src/lib/catalog.ts`; a single source drives homepage, categories, search and game URLs without persistence services.
 - Serve user-supplied local HTML5 folders from `public/` and normalize their catalog folder paths to an index.html entry; preserve explicit entry files and legacy HTTPS embed URLs.
 - Keep global navigation in the root Header with accessible Radix dialogs and CSS-token light/dark themes; browsing pages share the thumbnail grid without a marketing shell or footer.
+
+## Deployment architecture
+- Use the Cloudflare Vite plugin before the wrapper-provided TanStack stack and set `nitro: false`; exactly one deployment adapter avoids competing output pipelines.
+- Point Wrangler to the existing `src/server.ts` custom entrypoint and let the Cloudflare Vite plugin generate deployment assets; preserve the SSR error wrapper without hardcoding build paths.
+- Deploy only through an explicitly invoked deployment command; configuration changes must never automatically publish the site.

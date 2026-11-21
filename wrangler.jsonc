@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "plyvion",
+  "compatibility_date": "2026-11-21",
+  "compatibility_flags": ["nodejs_compat"],
+  // Preserve the existing SSR error wrapper as the custom Worker entrypoint.
+  "main": "src/server.ts",
+  "observability": {
+    "enabled": true
+  }
+}

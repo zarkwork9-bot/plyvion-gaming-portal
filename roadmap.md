@@ -6,3 +6,8 @@
 - [ ] Sitemap setup waits for the published public site address.
 - [ ] Contact address waits for the owner's supplied email.
 - [ ] Exact reference comparison waits for the missing Y8 screenshot attachment.
+
+## Cloudflare Workers deployment preparation
+- [x] Follow the official guide and replace the Nitro adapter without duplicate plugins.
+- [x] Add Wrangler configuration, deployment scripts and setup documentation; do not deploy.
+- [x] Check build results and routing/catalog regression tests; report changed files and any errors.
