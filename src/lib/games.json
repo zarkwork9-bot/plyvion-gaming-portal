@@ -9,5 +9,60 @@
     "instructions": "Use arrow keys or WASD to move. Swipe or tap the arrows on mobile. Merge matching tiles to reach 2048.",
     "addedAt": "2026-11-21T00:00:00.000Z",
     "popularity": 1
+  },
+  {
+    "slug": "neon-dodger",
+    "title": "Neon Dodger",
+    "description": "Dodge falling neon blocks, survive as long as you can, and beat your high score.",
+    "thumbnail": "/games/neon-dodger/thumbnail.svg",
+    "category": "arcade",
+    "gamePath": "/games/neon-dodger/index.html",
+    "instructions": "Use ← → or A/D keys, or tap the left and right buttons to dodge the falling blocks.",
+    "addedAt": "2026-11-21T00:00:00.000Z",
+    "popularity": 1
+  },
+  {
+    "slug": "memory-flip",
+    "title": "Memory Flip",
+    "description": "Flip the cards, find matching pairs, and clear the board in as few moves as possible.",
+    "thumbnail": "/games/memory-flip/thumbnail.svg",
+    "category": "memory",
+    "gamePath": "/games/memory-flip/index.html",
+    "instructions": "Tap or click two cards to find matching pairs. Match all eight pairs to win.",
+    "addedAt": "2026-11-21T00:00:00.000Z",
+    "popularity": 1
+  },
+  {
+    "slug": "lane-rush",
+    "title": "Lane Rush",
+    "description": "Race down a busy road, switch lanes to avoid traffic, and chase your distance record.",
+    "thumbnail": "/games/lane-rush/thumbnail.svg",
+    "category": "racing",
+    "gamePath": "/games/lane-rush/index.html",
+    "instructions": "Use left/right arrows or A/D, or tap the lane buttons to switch lanes and avoid cars.",
+    "addedAt": "2026-11-21T00:00:00.000Z",
+    "popularity": 1
+  },
+  {
+    "slug": "tic-tac-tactics",
+    "title": "Tic Tac Tactics",
+    "description": "Challenge a clever computer opponent in this clean, quick strategy classic.",
+    "thumbnail": "/games/tic-tac-tactics/thumbnail.svg",
+    "category": "strategy",
+    "gamePath": "/games/tic-tac-tactics/index.html",
+    "instructions": "You are X. Tap an empty square to play. Get three in a row before the computer does.",
+    "addedAt": "2026-11-21T00:00:00.000Z",
+    "popularity": 1
+  },
+  {
+    "slug": "word-scramble",
+    "title": "Word Scramble",
+    "description": "Unscramble mixed-up everyday words, use hints wisely, and build your streak.",
+    "thumbnail": "/games/word-scramble/thumbnail.svg",
+    "category": "word",
+    "gamePath": "/games/word-scramble/index.html",
+    "instructions": "Rearrange the letters to form the hidden word. Type your answer and press Check. Use Hint if you get stuck.",
+    "addedAt": "2026-11-21T00:00:00.000Z",
+    "popularity": 1
   }
 ]
