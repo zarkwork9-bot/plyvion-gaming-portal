@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "slug": "number-merge",
+    "title": "Number Merge 2048",
+    "description": "Slide the tiles, merge matching numbers, and reach 2048 in this original mobile-friendly puzzle game.",
+    "thumbnail": "/games/number-merge/thumbnail.svg",
+    "category": "puzzle",
+    "gamePath": "/games/number-merge/index.html",
+    "instructions": "Use arrow keys or WASD to move. Swipe or tap the arrows on mobile. Merge matching tiles to reach 2048.",
+    "addedAt": "2026-11-21T00:00:00.000Z",
+    "popularity": 1
+  }
+]
