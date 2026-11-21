@@ -1,0 +1,59 @@
+name: Import HTML5 games
+
+on:
+  workflow_dispatch:
+    inputs:
+      games:
+        description: "Comma-separated slugs, or all for the next batch"
+        required: true
+        default: "2048"
+        type: string
+      max_games:
+        description: "Maximum games when games=all (1–50)"
+        required: true
+        default: "10"
+        type: string
+      confirm_rights:
+        description: "I have permission to redistribute and commercially use every selected game and its assets"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+concurrency:
+  group: plyvion-game-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Plyvion
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Checkout source collection
+        uses: actions/checkout@v4
+        with:
+          repository: sausi-7/games
+          ref: main
+          path: source-games
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Import games
+        env:
+          GAMES: ${{ inputs.games }}
+          MAX_GAMES: ${{ inputs.max_games }}
+          CONFIRM_RIGHTS: ${{ inputs.confirm_rights }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+        run: node scripts/import-games.mjs
+      - name: Upload import report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: plyvion-game-import-report
+          path: import-report.json
+          if-no-files-found: ignore
