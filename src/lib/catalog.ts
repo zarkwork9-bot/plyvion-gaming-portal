@@ -11,6 +11,8 @@ export const categories: Category[] = [
   { slug: "sports", name: "Sports", description: "Compete in every game under the sun." },
   { slug: "strategy", name: "Strategy", description: "Plan, build and outthink your rivals." },
   { slug: "casual", name: "Casual", description: "Relaxed games for a quick break." },
+  { slug: "memory", name: "Memory", description: "Sharpen your recall with matching and memory challenges." },
+  { slug: "word", name: "Word", description: "Play with letters, spelling and vocabulary." },
 ];
 const categorySlug = z.string().refine((slug) => categories.some((category) => category.slug === slug), "Unknown game category");
 const gameSchema = z.object({
